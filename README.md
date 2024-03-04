@@ -114,3 +114,6 @@ If you think this work is helpful for your project, please give it a star and ci
 
 ## License
 This repo is released under the Apache 2.0 license. Please see the LICENSE file for more information.
+
+## Contact
+For inquiries, please contact: phatai@ajou.ac.kr
