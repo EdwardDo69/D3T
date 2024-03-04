@@ -1,4 +1,9 @@
 # D3T: Distinctive Dual-Domain Teacher Zigzagging Across RGB-Thermal Gap for Domain-Adaptive Object Detection
+
+<p align="center">
+<img src="./image/Figure2.jpg"><br>
+</p>
+
 This is the PyTorch implementation of our paper: <br>
 **D3T: Distinctive Dual-Domain Teacher Zigzagging Across RGB-Thermal Gap for Domain-Adaptive Object Detection**<br>
 [Dinh Phat Do](https://github.com/EdwardDo69), [Taehoon Kim](https://scholar.google.com/citations?user=RrKoTX4AAAAJ&hl=en), [Jaemin Na](https://github.com/NaJaeMin92), Jiwon Kim, Keonho Lee, Kyunghwan Cho, [Wonjun Hwang](https://scholar.google.co.uk/citations?user=-I8AfBAAAAAJ&hl=en)<br>
@@ -6,9 +11,6 @@ This is the PyTorch implementation of our paper: <br>
 
 [arXiv] [OpenReview] 
 
-<p align="center">
-<img src="./image/Figure2.jpg"><br>
-</p>
 
 # Installation
 
