@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="6311677f-3de8-4e60-b004-1a4855d162bc" name="Changes" comment="change README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/master" />
@@ -144,7 +148,7 @@
       <workItem from="1710748805185" duration="1097000" />
       <workItem from="1717085441398" duration="1015000" />
       <workItem from="1717086681597" duration="2871000" />
-      <workItem from="1717153768520" duration="2110000" />
+      <workItem from="1717153768520" duration="2937000" />
     </task>
     <task id="LOCAL-00001" summary="Add License">
       <option name="closed" value="true" />
@@ -226,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717155462741</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="change README.md">
+      <option name="closed" value="true" />
+      <created>1717156107315</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717156107315</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
