@@ -13,8 +13,7 @@
 <img src="/image/Figure2.jpg"><br>
 </p>
 
-[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://youtu.be/KVrX5z9qYDc?si=FFc4GpfABU5GaZ2w)
-
+[![Watch the video](https://img.youtube.com/vi/KVrX5z9qYDc/maxresdefault.jpg)](https://youtu.be/KVrX5z9qYDc?si=FFc4GpfABU5GaZ2w)
 
 
 
