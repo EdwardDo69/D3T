@@ -13,8 +13,7 @@
 <img src="/image/Figure2.jpg"><br>
 </p>
 
-[![Watch the video](https://img.youtube.com/vi/KVrX5z9qYDc/maxresdefault.jpg)](https://youtu.be/KVrX5z9qYDc?si=FFc4GpfABU5GaZ2w)
-
+![Demo](/image/Demo.gif)
 
 
 
