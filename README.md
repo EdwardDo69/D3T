@@ -6,11 +6,14 @@
 
 [Dinh Phat Do](https://github.com/EdwardDo69), [Taehoon Kim](https://scholar.google.com/citations?user=RrKoTX4AAAAJ&hl=en), [Jaemin Na](https://github.com/NaJaeMin92), Jiwon Kim, Keonho Lee, Kyunghwan Cho, [Wonjun Hwang](https://scholar.google.co.uk/citations?user=-I8AfBAAAAAJ&hl=en)<br>
 
-### [ArXiv](https://arxiv.org/abs/2402.12974) | [Youtube](https://youtu.be/NPbjykByfRA?si=MbQUXWQ28rrT86AT)
+### [ArXiv Paper](https://arxiv.org/abs/2402.12974) | [Youtube Oral](https://youtu.be/NPbjykByfRA?si=MbQUXWQ28rrT86AT)
 
 > **Abstract:** *Domain adaptation for object detection typically entails transferring knowledge from one visible domain to another visible domain. However, there are limited studies on adapting from the visible to the thermal domain, because the domain gap between the visible and thermal domains is much larger than expected, and traditional domain adaptation can not successfully facilitate learning in this situation. To overcome this challenge, we propose a Distinctive Dual-Domain Teacher (D3T) framework that employs distinct training paradigms for each domain. Specifically, we segregate the source and target training sets for building dual-teachers and successively deploy exponential moving average to the student model to individual teachers of each domain. The framework further incorporates a zigzag learning method between dual teachers, facilitating a gradual transition from the visible to thermal domains during training. We validate the superiority of our method through newly designed experimental protocols with well-known thermal datasets, i.e., FLIR and KAIST.*
 
+</div>
+
 </br>
+
 
 <p align="center">
 <img src="/image/Figure2.jpg">
@@ -24,11 +27,6 @@ corresponding to the trained domain.
 
 </br>
 
-
-
-
-
-
 <div align="center">
   
 ![Demo](/image/Demo.gif)
@@ -39,6 +37,79 @@ corresponding to the trained domain.
 <br>
 <br>
 
-# We will clean and release the code soon.
+## Environments
+```
+# Prepare environments via conda
+conda create -n D3T python=3.8.5
+conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
+# install cvpods
+cd D3T
+python3 -m pip install -e cvpods
+
+# recommend wandb for visualizing the training
+pip install wandb
+pip install imgaug
+
+# Install some spectial version
+pip install numpy==1.20.3
+pip install setuptools==59.5.0
+pip install Pillow==9.2.0
+pip install scikit-learn
+```
+## Dataset
+All the data arrangements follow the format of PASCAL_VOC. The dataset files are in the folder of `cvpods/data/` and the config path are in `cvpods/cvpods/data/datasets/paths_route.py`. Please refers to [cvpods](https://github.com/Megvii-BaseDetection/cvpods).
+
+#### Aligned Flir RGB -> Thermal
+
+```sh
+[data]
+    ├── FLIR_ICIP2020_aligned
+          ├── AnnotatedImages
+          ├── Annotations
+          ├── ImageSets
+          └── JPEGImages
+```
+
+* Please download Aligned Flir dataset from the [link](https://drive.google.com/file/d/1xHDMGl6HJZwtarNWkEV3T4O9X4ZQYz2Y/view). Like above image, move `Annotations`, `JPEGImages` and `AnnotatedImages` to   `./cvpods/data`
+* We make NEW ImageSets : cvpods/data/FLIR_ICIP2020_aligned/ImageSets
+
+## Pretrained Model
+We use the VGG16 as the backbone, the pretrained model can be downloaded from this [link](https://drive.google.com/file/d/1Nb2sYh8GHiEUDtfUn5Buwugu6bNd1VbT/view?usp=sharing). Then the `MODEL.WEIGHTS` should be updated in `config.py` correspondingly.
+
+## Training
+```
+cd D3T/D3T_flir
+CUDA_VISIBLE_DEVICES=0,1,2,3 pods_train --dir . --dist-url "tcp://127.0.0.1:29007" --num-gpus 4 OUTPUT_DIR 'outputs/thermal'
+```
+* If you want use `wandb`, specify wandb account in `runner.py` and then add `WANDB True` into the command.
+* The model is trained on 4 NVIDIA RTX A5000 GPUs.
+
+## Testing
+```
+CUDA_VISIBLE_DEVICES=0 pods_test --dir . --num-gpus 1 MODEL.WEIGHTS $model_path
+Ex:
+CUDA_VISIBLE_DEVICES=1 pods_test --num-gpus 1 --dir . --dist-url "tcp://127.0.0.1:29055" \
+MODEL.WEIGHTS D3T/D3T_flir/outputs/thermal/best.pth \
+OUTPUT_DIR D3T/D3T_flir/outputs/test
+```
+Note that if you provide a relative model path, the `$model_path` is the relative path to `cvpods`. It is recommended to use the absolute path for loading the right model.
+
+## Acknowledgement
+This repo is developed based on Harmonious Teacher and cvpods. Please check [Harmonious Teacher](https://github.com/kinredon/Harmonious-Teacher) and [cvpods](https://github.com/Megvii-BaseDetection/cvpods) for more details and features.
+
+## Citation
+```
+@article{do2024d3t,
+  title={D3T: Distinctive Dual-Domain Teacher Zigzagging Across RGB-Thermal Gap for Domain-Adaptive Object Detection},
+  author={Do, Dinh Phat and Kim, Taehoon and Na, Jaemin and Kim, Jiwon and Lee, Keonho and Cho, Kyunghwan and Hwang, Wonjun},
+  journal={arXiv preprint arXiv:2403.09359},
+  year={2024}
+}
+```
+
+## License
+This repo is released under the Apache 2.0 license. Please see the LICENSE file for more information.
+
+## Contact
 For inquiries, please contact: phatai@ajou.ac.kr
