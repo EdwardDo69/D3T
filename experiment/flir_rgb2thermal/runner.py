@@ -532,17 +532,6 @@ class SemiRunner(DefaultRunner):
                 if self.iter > self.ema_start and (self.iter - self.ema_start) % self.ema_update_steps == 0:
                     self.ema_model.update(self.model)
 
-                # ## rgb_ir_change = rgb_ir_change // 2
-                # if self.iter == self.iter_min + 2 * self.rgb_ir_change:
-                #     self.iter_min = self.iter_min + 2 * self.rgb_ir_change
-                #     if self.rgb_ir_change > 100:
-                #         tmp = self.rgb_ir_change - 100
-                #         logger.info('Iter {}: RGB IR Change {} ==> {} '.format(self.iter,   self.rgb_ir_change, tmp))
-                #         self.rgb_ir_change = tmp
-                #     elif  self.rgb_ir_change == 100:
-                #         logger.info('Iter {}: RGB IR Change {} ==> {} '.format(self.iter, self.rgb_ir_change, 1))
-                #         self.rgb_ir_change = 1
-
                 if self.iter ==30000:
                     self.rgb_ir_change_ir += self.rgb_ir_change_increase
                     self.rgb_ir_change_rgb -= self.rgb_ir_change_increase
