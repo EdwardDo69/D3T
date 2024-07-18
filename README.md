@@ -90,8 +90,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 pods_train --dir . --dist-url "tcp://127.0.0.1:2900
 CUDA_VISIBLE_DEVICES=0 pods_test --dir . --num-gpus 1 MODEL.WEIGHTS $model_path
 Ex:
 CUDA_VISIBLE_DEVICES=1 pods_test --num-gpus 1 --dir . --dist-url "tcp://127.0.0.1:29055" \
-MODEL.WEIGHTS D3T/D3T_flir/outputs/thermal/best.pth \
-OUTPUT_DIR D3T/D3T_flir/outputs/test
+MODEL.WEIGHTS D3T/experiment/flir_rgb2thermal/outputs/thermal/best.pth \
+OUTPUT_DIR D3T/experiment/flir_rgb2thermal/outputs/test
 ```
 Note that if you provide a relative model path, the `$model_path` is the relative path to `cvpods`. It is recommended to use the absolute path for loading the right model.
 
