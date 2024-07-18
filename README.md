@@ -79,7 +79,7 @@ We use the VGG16 as the backbone, the pretrained model can be downloaded from th
 
 ## Training
 ```
-cd D3T/D3T_flir
+cd experiment/flir_rgb2thermal/
 CUDA_VISIBLE_DEVICES=0,1,2,3 pods_train --dir . --dist-url "tcp://127.0.0.1:29007" --num-gpus 4 OUTPUT_DIR 'outputs/thermal'
 ```
 * If you want use `wandb`, specify wandb account in `runner.py` and then add `WANDB True` into the command.
