@@ -45,6 +45,7 @@ conda activate D3T
 conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
 # install cvpods
+git clone https://github.com/EdwardDo69/D3T.git
 cd D3T
 python3 -m pip install -e cvpods
 
