@@ -41,6 +41,7 @@ corresponding to the trained domain.
 ```
 # Prepare environments via conda
 conda create -n D3T python=3.8.5
+conda activate D3T
 conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
 # install cvpods
