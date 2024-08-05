@@ -105,10 +105,11 @@ This repo is developed based on Harmonious Teacher and cvpods. Please check [Har
 
 ## Citation
 ```
-@article{do2024d3t,
+@inproceedings{do2024d3t,
   title={D3T: Distinctive Dual-Domain Teacher Zigzagging Across RGB-Thermal Gap for Domain-Adaptive Object Detection},
   author={Do, Dinh Phat and Kim, Taehoon and Na, Jaemin and Kim, Jiwon and Lee, Keonho and Cho, Kyunghwan and Hwang, Wonjun},
-  journal={arXiv preprint arXiv:2403.09359},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={23313--23322},
   year={2024}
 }
 ```
