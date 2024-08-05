@@ -98,7 +98,7 @@ OUTPUT_DIR D3T/experiment/flir_rgb2thermal/outputs/test
 Note that if you provide a relative model path, the `$model_path` is the relative path to `cvpods`. It is recommended to use the absolute path for loading the right model.
 
 ## Checkpoint
-To facilitate the verification of our results, we provide our checkpoint for the FLIR dataset. Please download it from the following [link](https://drive.google.com/file/d/1M7WXOrAUusKRmhi4ewU-xj57nfXPYMjz/view?usp=drive_link).
+To facilitate the verification of our results, we provide our checkpoint for the `FLIR dataset`. Please download it from the following [link](https://drive.google.com/file/d/1M7WXOrAUusKRmhi4ewU-xj57nfXPYMjz/view?usp=drive_link).
 
 ## Acknowledgement
 This repo is developed based on Harmonious Teacher and cvpods. Please check [Harmonious Teacher](https://github.com/kinredon/Harmonious-Teacher) and [cvpods](https://github.com/Megvii-BaseDetection/cvpods) for more details and features.
