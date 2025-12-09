@@ -54,7 +54,7 @@ cd D3T
 python3 -m pip install -e cvpods
 
 # recommend wandb for visualizing the training
-pip install wandb
+pip install wandb==0.21.0
 pip install imgaug
 
 # Install some spectial version
