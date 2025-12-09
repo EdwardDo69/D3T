@@ -43,6 +43,10 @@ corresponding to the trained domain.
 conda create -n D3T python=3.8.5
 conda activate D3T
 conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+( OR 
+conda install cudatoolkit=11.1 -c pytorch -c conda-forge
+pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+)
 
 # install cvpods
 git clone https://github.com/EdwardDo69/D3T.git
